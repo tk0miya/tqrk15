@@ -1,8 +1,18 @@
 # RBS::Inline を導入してみた話
 
+## 自己紹介
+
+* tk0miya といいます
+* ruby-jp slack の #types に生息
+    * 毎月 #asakusa-bashi_rbs チャンネルでオンライン勉強会に参加してます
+    * 型がテーマのオンラインもくもく会です
+* 型の実用化を目指しています
+
 ## RBS::Inline を導入してみた話
 
 RubyKaigi 2024 で発表された RBS::Inline を導入してみました。
+RBS::Inline は **ソースコード内に書かれたコメント** を型定義ファイルに
+展開するツールです。
 
 導入前:
 
@@ -17,7 +27,7 @@ RubyKaigi 2024 で発表された RBS::Inline を導入してみました。
 
 サンプル:
 
-```
+```ruby
 module Tokyu
   class RubyKaigi
     attr_reader :number #: Integer
@@ -35,8 +45,11 @@ end
 
 ## 感想
 
-* コードと型がとなりにあるのは便利
-* これまで遠巻きに見ていたメンバーも書いてくれそう
+* 型がコードのとなりにあるのは便利
+    * GitHub 上でコードを眺めるときも便利！
+* 記述がシンプルになった
+    * これまでは class, module などの定義を二箇所に書いていた
+* 遠巻きに見ていたメンバーも書いてくれそう
 
 ## ちょっと工夫した話
 
@@ -49,7 +62,7 @@ end
 * Style/AccessorGrouping
   * attr_* 行はひとつにまとめるべき
 * Style/CommentedKeyword
-  * attr_* や def のあとにコメントを書くな
+  * class や def のあとにコメントを書くな
 
 RBS::Inline を導入するにはこれらを無効化しないといけません。
 
@@ -68,10 +81,11 @@ Rubocop の Cop を調整する PR を投げました。
 ### 自動的に rbs-inline を実行したい
 
 RBS::Inline の README には `fswatch` コマンドが推奨されている
-しかし、できれば使いたくない
+しかし、僕はズボラなので使いこなせませんでした。
 
 * コマンドを覚えられない
 * fswatch をインストールしたくない
+* VSCode を再起動すると実行するのを忘れる
 
 #### ということで
 
@@ -104,3 +118,6 @@ https://github.com/tk0miya/rubocop-rbs_inline
     * VSCode での rbs-inline の自動実行
     * Rubocop による型コメントの Lint
 * その他、バグつぶしなどをお手伝いしました
+
+
+あとで整理して解説ブログとしてまとめる予定です。

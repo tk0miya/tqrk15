@@ -1,11 +1,16 @@
-require:
-  - rubocop-rbs_inline
+#require:
+#  - rubocop-rbs_inline
 
 Style/Documentation:
   Enabled: false
 
-# Layout/LeadingCommentSpace:
-#   AllowRBSInlineAnnotation: true
-
 Layout/LeadingCommentSpace:
-  Enabled: false
+  AllowRBSInlineAnnotation: true
+#Layout/LeadingCommentSpace:
+#  Enabled: false
+#
+#Style/CommentedKeyword:
+#  Enabled: false
+#
+#Style/AccessorGrouping:
+#  Enabled: false
