@@ -25,4 +25,5 @@ end
 tokyu15 = Tokyu::RubyKaigi.new(15)
 tokyu15.join('Alice')
 tokyu15.join('Bob')
-tokyu15.say_hello
+result = tokyu15.say_hello
+puts(result)
