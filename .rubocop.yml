@@ -1,0 +1,11 @@
+require:
+  - rubocop-rbs_inline
+
+Style/Documentation:
+  Enabled: false
+
+# Layout/LeadingCommentSpace:
+#   AllowRBSInlineAnnotation: true
+
+Layout/LeadingCommentSpace:
+  Enabled: false

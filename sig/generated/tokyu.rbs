@@ -1,0 +1,17 @@
+# Generated from lib/tokyu.rb with RBS::Inline
+
+module Tokyu
+  class RubyKaigi
+    attr_reader number: Integer
+
+    attr_reader members: Array[String]
+
+    # @rbs number: Integer
+    # @rbs return: void
+    def initialize: (Integer number) -> void
+
+    def join: (untyped name) -> untyped
+
+    def say_hello: () -> untyped
+  end
+end
